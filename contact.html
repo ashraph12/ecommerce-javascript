@@ -1,42 +1,102 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="contact-container">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width", initial scale="1.0">
+      <title>Ecommerce-Shopping Cart</title>
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+      <link rel="stylesheet" href="./product.css">
+  </head>
+  <body>
+  <header>
+      <div class="nav container">         
+      <a href="#" class="logo"><span>E</span>commerce</a>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+      <a href="./contact.html">Home</a>
+             <a href="./female.html">Female Wears<a>
+                <a href="./index.html">Male Wears</a>
+                <a href="./child.html">Children Wears</a>
+                <a href="./child.html">Children Wears</a>
+                <a href="./accesory.html">Accesories</a>
+                <a href="./Untitled-1.html">Contact-Us</a>
+      <!--CART-ICON-->
+      <i class='bx bx-shopping-bag' id="cart-icon"></i>
 
-            <input type="submit" value="Submit">
-        </form>
+  
+      <!--CART-->
+  <div class="cart">
+      <h2 class="cart-title">
+          Your Cart
+      </h2>
+  
+    <!--CART CONTENT-->
+      <div class="cart-content">
+      
+  </div> 
+  
+
+  
+    
+    <!--  TOTAL-->
+    <div class="total">
+    <div class="total-title">Total</div>
+    <div class="total-price">$0</div>
+  </div>
+  
+  <!-- BUY BUTTON-->
+  <button type="button" class="btn-buy" href="./index.html"> Buy Now</button>
+  <!--CART CLOSE-->
+  <i class='bx bx-x' id="cart-close"></i>
+  </div>
+
+</header>  
+
+<main class="page">
+  <!-- header -->
+  <div class="hero">
+    <div class="hero-container">
+      <!-- <img src="./accesories/jew1.jpg" alt="">
+      <img src="./accesories/glass4.jpg" alt=""> -->
+      <div class="hero-text">
+        <h1>WELCOME TO ELEGANZA</h1>
+        <h4>Shop with us today and you won't regret it.</h4>
+      </div>
+    </div>
+  </div>
+  <!-- end of header -->
+</main>
+<section class="shop container">
+  <h2 class="section-title">Products We Offer:</h2>
+  <div class="shop-content">
+  <div class="product-box">
+      <img src="./male wears/polo shiry.jpg" alt="" class="product-img">
+      <h2 class="product-title"><a href="index.html">Male wears: Trousers,shirts,shoes</a></h2>
     </div>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
+      <div class="product-box">
+          <img src="./female/cloth1.jpg" alt="" class="product-img">
+          <h2 class="product-title"><a href="female.html">FEMALE WEARS:Trousers,shirts,shoes</a></h2>
+          
+        </div>
+
+        
+          <div class="product-box">
+              <img src="./children/cloth1.jpg" alt="" class="product-img">
+              <h2 class="product-title"> <a href="child.html">Children wears:racks,trousers,shirt,shoes</a></h2>
+              
+            </div>
+
             
-            
-            localStorage.setItem("email", email);
-            localStorage.setItem("name", name);
-            localStorage.setItem("message", message);
-            document.getElementById("contactForm").reset();
-            alert("Message Delivered");
-        });
-    </script>
-</body>
-</html>
+              <div class="product-box">
+                  <img src="./accesories/watch4.jpg" alt="" class="product-img">
+                  <h2 class="product-title"><a href="accesory.html">Accesories:
+                    watches&Jewelries
+                  </a></h2>
+    
+                </div>
+                </div>
+  <script src="./script.js"></script>
+
+  </body>
+  </html>

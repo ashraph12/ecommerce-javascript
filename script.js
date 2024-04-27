@@ -70,6 +70,7 @@ function handle_addCartItem(){
         price,
         imgSrc,
     };
+    
 
     if(itemsAdded.find((el) => el.title == newToAdd.title)){
         alert("This item already exists!");
@@ -108,15 +109,6 @@ function handle_buyOrder(){
         alert("There is No Order to Place Yet! Please Make an Order First, Thank you!");
         return;
     }
-
-//       const cartContent = cart.querySelector(".cart-content");
-//       cartContent.innerHTML =``;
-//       alert("Your Order has been Placed successfully!")
-//       itemsAdded =[];
-//       update();
-// }
-
-
 var paymentMode = prompt("Enter your payment mode (e.g., debit card, credit card)");
 if (paymentMode) {
     var cardNumber = prompt("Enter your debit/credit card number");
@@ -135,11 +127,12 @@ update();
 //===============UPDATE AND RERENDER FUNCTIONS ============
 function updateTotal(){
     let cartBoxes = document.querySelectorAll(".cart-box");
+    let itemsAdded = JSON.parse(localStorage.getItem('cartItems')) || [];
     const totalElement = cart.querySelector(".total-price");
     let total = 0;
     cartBoxes.forEach((cartBox) => {
         let priceElement = cartBox.querySelector(".cart-price");
-        let price = parseFloat(priceElement.innerHTML.replace("$", ""));
+        let price = parseFloat(priceElement.innerHTML.replace("#", ""));
         let quantity = cartBox.querySelector(".cart-quantity").value;
         total += price*quantity;
     });
@@ -148,7 +141,7 @@ function updateTotal(){
     total=total.toFixed(2);//or you can use also
     // total = Math.round(total * 100)/100;
 
-   totalElement.innerHTML = "$" + total;
+   totalElement.innerHTML = "#" + total;
 }
 
 // =====================HTML COMPONENTS ====================
@@ -165,18 +158,5 @@ function updateTotal(){
 </div>`;
 
    }
-     //====================Buy Buttton=================//
-     document.getElementById("cart-comtent").addEventListener("click", function() {
-        var paymentMode = prompt("Enter your payment mode (e.g., debit card, credit card)");
-        if (paymentMode) {
-            var cardNumber = prompt("Enter your debit card number");
-            if (cardNumber) {
-                alert("Payment successful");
-            } else {
-                alert("Invalid card number");
-            }
-        } else {
-            alert("Payment cancelled");
-        }
-        update();
-    });
+
+
